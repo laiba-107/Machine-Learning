@@ -1,0 +1,8 @@
+City,Education_Level,Gender,Purchased
+London,Low,Male,1
+Paris,Medium,Female,0
+London,High,Female,1
+Berlin,Medium,Male,0
+Paris,Low,Female,0
+Berlin,High,Male,1
+London,Medium,Male,1
