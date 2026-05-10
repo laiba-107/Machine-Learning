@@ -36,8 +36,14 @@ st.title("🤖 Machine Learning Model Dashboard")
 st.markdown("### Interactive predictions using trained deep learning models")
 
 # Check for saved models
-MODEL_DIR = 'saved_models'
-if not os.path.exists(MODEL_DIR):
+SEATTLE_DIR = 'Seattle Weather Prediction Dataset/saved_models'
+CLIMATE_DIR = '4_Daily Climate Time Series Data/saved_models'
+CORGIS_DIR = '3_CORGIS_Weather_TimeSeries/saved_models'
+TWITTER_DIR = '2_Twitter Sentiment Analysis/saved_models'
+TESS_DIR = '1_Toronto Emotional Speech Set (TESS)/saved_models'
+
+DIRS = [SEATTLE_DIR, CLIMATE_DIR, CORGIS_DIR, TWITTER_DIR, TESS_DIR]
+if not any(os.path.exists(d) for d in DIRS):
     st.error("⚠️ No saved models found! Please run the notebooks first to train and save models.")
     st.stop()
 
@@ -52,6 +58,7 @@ with tab1:
     st.markdown("Predict weather type based on climate features")
     
     try:
+        MODEL_DIR = SEATTLE_DIR
         from tensorflow.keras.models import load_model
         
         scaler = pickle.load(open(f'{MODEL_DIR}/seattle_scaler.pkl', 'rb'))
@@ -97,6 +104,7 @@ with tab2:
     st.markdown("Forecast Delhi mean temperature")
     
     try:
+        MODEL_DIR = CLIMATE_DIR
         from tensorflow.keras.models import load_model
         
         scaler = pickle.load(open(f'{MODEL_DIR}/climate_scaler.pkl', 'rb'))
@@ -152,6 +160,7 @@ with tab3:
     st.markdown("Forecast temperature for selected city")
     
     try:
+        MODEL_DIR = CORGIS_DIR
         from tensorflow.keras.models import load_model
         
         scaler = pickle.load(open(f'{MODEL_DIR}/corgis_scaler.pkl', 'rb'))
@@ -200,6 +209,7 @@ with tab4:
     st.markdown("Analyze the sentiment of any text")
     
     try:
+        MODEL_DIR = TWITTER_DIR
         import re
         from tensorflow.keras.models import load_model
         from tensorflow.keras.preprocessing.sequence import pad_sequences
@@ -252,6 +262,7 @@ with tab5:
     st.markdown("Upload a WAV audio file to classify emotion")
     
     try:
+        MODEL_DIR = TESS_DIR
         from tensorflow.keras.models import load_model
         import librosa
         

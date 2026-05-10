@@ -1,0 +1,68 @@
+================================================================================
+NOTEBOOK: 01_TESS_Emotion_Classification.ipynb
+
+--- First Markdown Cell ---
+# 🎤 TESS Emotion Classification using Deep Learning
+## RNN, LSTM, GRU - Audio Classification
+**Dataset:** Toronto Emotional Speech Set (TESS)
+
+Classifies emotional speech into 7 emotions using MFCC features extracted from audio.
+
+--- Target Info ---
+labels = []
+valid_labels = []
+y = np.array(valid_labels)
+================================================================================
+NOTEBOOK: 02_Twitter_Sentiment_Analysis.ipynb
+
+--- First Markdown Cell ---
+# 💬 Twitter Sentiment Analysis using Deep Learning
+## RNN, LSTM, GRU - Text Classification
+**Dataset:** Twitter Entity Sentiment Analysis
+
+Classifies tweets into Positive, Negative, Neutral, and Irrelevant sentiments.
+
+--- Target Info ---
+y_train = le.fit_transform(train_df['sentiment'])
+================================================================================
+NOTEBOOK: 03_CORGIS_Weather_TimeSeries.ipynb
+
+--- First Markdown Cell ---
+# 🌤️ CORGIS Weather Time Series Forecasting
+## ANN, RNN, LSTM, GRU - Regression Task
+**Dataset:** Weather Dataset (CORGIS) - US weather stations data
+
+This notebook forecasts average temperature using deep learning models.
+
+--- Target Info ---
+city = 'Chicago'
+X, y = [], []
+X, y = create_sequences(scaled_data, target_idx, WINDOW_SIZE)
+dummy = np.zeros((len(scaled_vals), len(feature_cols)))
+================================================================================
+NOTEBOOK: 04_Daily_Climate_TimeSeries.ipynb
+
+--- First Markdown Cell ---
+# 🌡️ Daily Climate Time Series Forecasting using Deep Learning
+## ANN, RNN, LSTM, GRU - Regression Task
+**Dataset:** Daily Delhi Climate (Train + Test)
+
+This notebook forecasts mean temperature using ANN, RNN, LSTM, and GRU models.
+
+--- Target Info ---
+X, y = [], []
+X, y = create_sequences(scaled_data, target_idx, WINDOW_SIZE)
+dummy = np.zeros((len(scaled_vals), len(feature_cols)))
+================================================================================
+NOTEBOOK: 05_Seattle_Weather_Prediction.ipynb
+
+--- First Markdown Cell ---
+# 🌧️ Seattle Weather Prediction using Deep Learning
+## ANN, RNN, LSTM, GRU - Classification Task
+**Dataset:** Seattle Weather Prediction Dataset
+
+This notebook classifies weather types (drizzle, fog, rain, snow, sun) using
+ANN, RNN, LSTM, and GRU architectures built with TensorFlow/Keras.
+
+--- Target Info ---
+y = df['weather'].values
